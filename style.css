@@ -282,6 +282,7 @@
 
 /* el aside de la informacion individual de los productos */
 .product-detail-aside {
+  background-color: var(--white);
   width: 360px;
   padding-bottom: 24px;
   position: absolute;
