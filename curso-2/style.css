@@ -1,102 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
-  <title>Document</title>
-  <style>
-    :root {
-      --white: #FFFFFF;
-      --black: #000000;
-      --very-light-pink: #C7C7C7;
-      --text-input-field: #F7F7F7;
-      --hospital-green: #ACD9B2;
-      --sm: 14px;
-      --md: 16px;
-      --lg: 18px;
-    }
-    body {
-      margin: 0;
-      font-family: 'Quicksand', sans-serif;
-    }
-    .product-detail {
-      width: 360px;
-      padding-bottom: 24px;
-      position: absolute;
-      right: 0;
-    }
-    .product-detail-close {
-      background: var(--white);
-      width: 14px;
-      height: 14px;
-      position: absolute;
-      top: 24px;
-      left: 24px;
-      z-index: 2;
-      padding: 12px;
-      border-radius: 50%;
-    }
-    .product-detail-close:hover {
-      cursor: pointer;
-    }
-    .product-detail > img:nth-child(2) {
-      width: 100%;
-      height: 360px;
-      object-fit: cover;
-      border-radius: 0 0 20px 20px;
-    }
-    .product-info {
-      margin: 24px 24px 0 24px;
-    }
-    .product-info p:nth-child(1) {
-      font-weight: bold;
-      font-size: var(--md);
-      margin-top: 0;
-      margin-bottom: 4px;
-    }
-    .product-info p:nth-child(2) {
-      color: var(--very-light-pink);
-      font-size: var(--md);
-      margin-top: 0;
-      margin-bottom: 36px;
-    }
-    .product-info p:nth-child(3) {
-      color: var(--very-light-pink);
-      font-size: var(--sm);
-      margin-top: 0;
-      margin-bottom: 36px;
-    }
-    .primary-button {
-      background-color: var(--hospital-green);
-      border-radius: 8px;
-      border: none;
-      color: var(--white);
-      width: 100%;
-      cursor: pointer;
-      font-size: var(--md);
-      font-weight: bold;
-      height: 50px;
-    }
-    .add-to-cart-button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    @media (max-width: 640px) {
-      .product-detail {
-        width: 100%;
-      }
-    }
-
-
-onaseturertnaosu+
-
-aoenurnaoreu
-
 :root {
   --white: #FFFFFF;
   --black: #000000;
@@ -121,16 +22,26 @@ body {
   font-family: 'Quicksand', sans-serif;
 }
 nav {
+  display: grid;
+}
+.main-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 2.4rem;
   border-bottom: 1px solid var(--very-light-pink);
 }
+.mobile-nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid var(--very-light-pink);
+}
 .menu {
+  display: block;
   cursor: pointer;
 }
-.menu, .toggle-mobile-menu, .toggle-desktop-menu, .toggle-aside-menu, .toggle-product-description {
+.toggle-mobile-menu, .toggle-mobile-email, .toggle-aside-menu, .toggle-product-description, .toggle-desktop-email {
   display: none;
 }
 .mobile-menu {
@@ -167,32 +78,45 @@ li .sign-out {
 .logo {
   width: 10rem;
 }
-.navbar-left > ul, .navbar-right > ul {
+.navbar-left ul, .navbar-right .navbar-email {
+  display: none;
+}
+.navbar-right > ul, .mobile-nav > ul {
+  display: flex;
+}
+.navbar-left > ul, .navbar-right > ul, .mobile-nav > ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
   align-items: center;
   height: 6rem;
 }
-.navbar-left {
-  display: flex;
+.mobile-nav > ul {
+  height: 2rem;
 }
 .navbar-left > ul {
   margin-left: 1.2rem;
 }
-.navbar-left > ul li a, .navbar-right > ul li a {
+.navbar-left > ul li a, .navbar-right > ul li a, .mobile-nav > ul li a {
   text-decoration: none;
   color: var(--very-light-pink);
   border: 1px solid var(--white);
   padding: 0.8rem;
-  border-radius: 8px;
+  border-radius: 0.8rem;
   display: flex;
   align-items: center;
 }
-.navbar-left > ul li a:hover, .navbar-right > ul li a:hover {
+.mobile-nav > ul li a {
+  border: none;
+  padding: 0.2rem 0.4rem;
+}
+.navbar-left > ul li a:hover, .navbar-right > ul li a:hover, .mobile-nav > ul li a:hover {
   border: 1px solid var(--hospital-green);
   color: var(--hospital-green);
+}
+.mobile-nav > ul li a:hover {
+  border: none;
+  background: var(--black);
 }
 .navbar-email {
   color: var(--very-light-pink);
@@ -217,7 +141,7 @@ li .sign-out {
   justify-content: center;
   align-items: center;
 }
-.desktop-menu {
+.email-menu {
   position: absolute;
   width: 14rem;
   top: 133%;
@@ -227,36 +151,38 @@ li .sign-out {
   border-radius: 6px;
   padding: 1rem 1rem 0 1rem;
 }
-/* .navbar-email:hover a + .desktop-menu {
+/* .navbar-email:hover a + .email-menu {
   display: block;
 } */
-.desktop-menu ul {
+.email-menu ul {
   list-style: none;
 }
-.desktop-menu ul li {
+.email-menu ul li {
   text-align: end;
 }
-.desktop-menu ul li:nth-child(1), .desktop-menu ul li:nth-child(2) {
+.email-menu ul li:nth-child(1), .email-menu ul li:nth-child(2) {
   color: var(--black);
   font-weight: bold;
 }
-.desktop-menu ul li:last-child {
+.email-menu ul li:last-child {
   padding-top: 2rem;
   border-top: 0.1rem solid var(--very-light-pink);
 }
-.desktop-menu ul li:last-child a {
+.email-menu ul li:last-child a {
   color: var(--hospital-green);
   font-size: var(--sm);
 }
-.desktop-menu ul li a {
+.email-menu ul li a {
   color: var(--back);
   text-decoration: none;
   margin-bottom: 2rem;
   display: inline-block;
 }
 /* aside thingy */
+.product-detail, .product-description {
+  width: 100%;
+}
 .product-detail {
-  width: 36rem;
   padding: 0.8rem 2.4rem;
   background: var(--white);
   position: absolute;
@@ -332,17 +258,17 @@ li .sign-out {
 /* begin JS cards container */
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 24rem);
+  grid-template-columns: repeat(auto-fill, 15rem);
   gap: 1.6rem 1.2rem;
   place-content: center;
   margin-top: 1rem;
 }
 .product-card {
-  width: 24rem;
+  width: 14rem;
 }
-.product-card img {
-  width: 24rem;
-  height: 24rem;
+.product-card > img {
+  width: 14rem; 
+  height: 14rem;
   border-radius: 2rem;
   object-fit: cover;
 }
@@ -372,11 +298,10 @@ li .sign-out {
 /* another product thingy */
 .product-description {
   background: var(--white);
-  width: 36rem;
-  /* padding-bottom: 24px; */
+  /* padding-bottom: 2.4rem; */
   position: absolute;
   margin: 0 auto;
-  top: 7.5%;
+  top: 6.2%;
   right: 0;
   left: 0;
 }
@@ -405,9 +330,9 @@ li .sign-out {
   object-fit: cover;
   border-radius: 0 0 2rem 2rem;
 }
-.product-description-info {
+/* .product-description-info {
   margin: 2.4rem 2.4rem 0 2.4rem;
-}
+} */
 .product-description-info p:nth-child(1) {
   font-weight: bold;
   font-size: var(--md);
@@ -435,51 +360,32 @@ li .sign-out {
 .add-to-cart-button, .mini-add-to-cart {
   cursor: crosshair;
 }
-@media (max-width: 640px) {
-  .menu {
-    display: block;
-  }
-  .navbar-left ul, .navbar-email {
+@media (min-width: 640px) {
+  .menu, .mobile-menu {
     display: none;
   }
-  .product-detail, .product-description {
-    width: 100%;
+  .navbar-left, .navbar-left > ul{
+    display: flex;
   }
   .cards-container {
-    grid-template-columns: repeat(auto-fill, 15rem);
+    margin: 0 1vw;
+    grid-template-columns: repeat(auto-fill, 24rem);
   }
-  .product-card {
-    width: 14rem;
+  .product-card, .product-card > img {
+    width: 24rem;
   }
   .product-card > img {
-    width: 14rem;
-    height: 14rem;
+    height: 24rem;
+  }
+  .product-detail, .product-description {
+    width: 36rem;
   }
 }
-@media (min-width: 640px) {
-  .mobile-menu {
+@media (min-width: 740px) {
+  .mobile-nav {
     display: none;
   }
+  .navbar-right .navbar-email  {
+    display: block;
+  }
 }
-
-
-  </style>
-</head>
-<body>
-  <aside class="product-detail">
-    <div class="product-detail-close">
-      <img src="./icons/icon_close.png" alt="close">
-    </div>
-    <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="bike">
-    <div class="product-info">
-      <p>$35,00</p>
-      <p>Bike</p>
-      <p>With its practical position, this bike also fulfills a decorative function, add your hall or workspace.</p>
-      <button class="primary-button add-to-cart-button">
-        <img src="./icons/bt_add_to_cart.svg" alt="add to cart">
-        Add to cart
-      </button>
-    </div>
-  </aside>
-</body>
-</html>
