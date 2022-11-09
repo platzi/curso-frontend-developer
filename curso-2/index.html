@@ -12,54 +12,75 @@
 </head>
 <body>
   <nav>
-    <img src="./icons/icon_menu.svg" alt="menu" class="menu" id="burger-icon">
-    <div class="navbar-left">
-      <img src="./logos/logo_yard_sale.svg" alt="logo" class="logo">
-      <ul>
-        <li>
-          <a href="/">All</a>
-        </li>
-        <li>
-          <a href="/">Clothes</a>
-        </li>
-        <li>
-          <a href="/">Electronics</a>
-        </li>
-        <li>
-          <a href="/">Furnitures</a>
-        </li>
-        <li>
-          <a href="/">Toys</a>
-        </li>
-        <li>
-          <a href="/">Others</a>
-        </li>
-      </ul>
+    <div class="main-nav">
+      <img src="./icons/icon_menu.svg" alt="menu" class="menu" id="burger-icon">
+      <div class="navbar-left">
+        <img src="./logos/logo_yard_sale.svg" alt="logo" class="logo">
+        <ul>
+          <li>
+            <a href="#">All</a>
+          </li>
+          <li>
+            <a href="#">Clothes</a>
+          </li>
+          <li>
+            <a href="#">Electronics</a>
+          </li>
+          <li>
+            <a href="#">Furnitures</a>
+          </li>
+          <li>
+            <a href="#">Toys</a>
+          </li>
+          <li>
+            <a href="#">Others</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navbar-right">
+        <ul>
+          <li class="navbar-email">
+            <a id="email-anchor-desktop" href="#">leodexe.github.io</a>
+            <div class="email-menu desktop-email toggle-desktop-email">
+              <ul>
+                <li>
+                  <a href="#" class="title">My orders</a>
+                </li>
+                <li>
+                  <a href="https://leodexe.github.io/">My GitHub</a>
+                </li>
+                <li>
+                  <a href="#">Sign out</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="navbar-shopping-cart">
+            <a href="#" id="shopping-anchor">
+              <img src="./icons/icon_shopping_cart.svg" alt="shopping cart">
+            </a>
+            <div id="shopping-counter">1</div>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="navbar-right">
+    <div class="mobile-nav">
       <ul>
         <li class="navbar-email">
-          <a id="platzi-anchor" href="#">platzi@example.com</a>
-          <div class="desktop-menu toggle-desktop-menu">
+          <a id="email-anchor-mobile" href="#">leodexe.github.io</a>
+          <div class="email-menu mobile-email toggle-mobile-email">
             <ul>
               <li>
-                <a href="/" class="title">My orders</a>
+                <a href="#" class="title">My orders</a>
               </li>
               <li>
-                <a href="/">My account</a>
+                <a href="https://leodexe.github.io/">My GitHub</a>
               </li>
               <li>
-                <a href="/">Sign out</a>
+                <a href="#">Sign out</a>
               </li>
             </ul>
           </div>
-        </li>
-        <li class="navbar-shopping-cart">
-          <a href="#" id="shopping-anchor">
-            <img src="./icons/icon_shopping_cart.svg" alt="shopping cart">
-          </a>
-         
-          <div>2</div>
         </li>
       </ul>
     </div>
@@ -67,49 +88,49 @@
   <div class="mobile-menu toggle-mobile-menu">
     <ul>
       <li>
-        <a href="/">CATEGORIES</a>
+        <a href="#">CATEGORIES</a>
       </li>
       <li>
-        <a href="/">All</a>
+        <a href="#">All</a>
       </li>
       <li>
-        <a href="/">Clothes</a>
+        <a href="#">Clothes</a>
       </li>
       <li>
-        <a href="/">Electronics</a>
+        <a href="#">Electronics</a>
       </li>
       <li>
-        <a href="/">Furnitures</a>
+        <a href="#">Furnitures</a>
       </li>
       <li>
-        <a href="/">Toys</a>
+        <a href="#">Toys</a>
       </li>
       <li>
-        <a href="/">Other</a>
-      </li>
-    </ul>
-
-    <ul>
-      <li>
-        <a href="/">My orders</a>
-      </li>
-      <li>
-        <a href="/">My account</a>
+        <a href="#">Other</a>
       </li>
     </ul>
 
     <ul>
       <li>
-        <a href="/" class="email">platzi@example.com</a>
+        <a href="#">My orders</a>
       </li>
       <li>
-        <a href="/" class="sign-out">Sign out</a>
+        <a href="#">My account</a>
+      </li>
+    </ul>
+
+    <ul>
+      <li>
+        <a href="https://leodexe.github.io" class="email">leodexe@github.io</a>
+      </li>
+      <li>
+        <a href="#" class="sign-out">Sign out</a>
       </li>
     </ul>
   </div>
   <aside class="product-detail toggle-aside-menu">
     <div class="title-container">
-      <img src="./icons/flechita.svg" alt="arrow">
+      <img src="./icons/flechita.svg" alt="arrow" id="close-product-detail">
       <p class="title">My order</p>
     </div>
     <div class="my-order-content">
@@ -121,32 +142,17 @@
         <p>$30,00</p>
         <img src="./icons/icon_close.png" alt="close">
       </div>
-      <div class="shopping-cart">
-        <figure>
-          <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="bike">
-        </figure>
-        <p>Bike</p>
-        <p>$30,00</p>
-        <img src="./icons/icon_close.png" alt="close">
-      </div>
-      <div class="shopping-cart">
-        <figure>
-          <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="bike">
-        </figure>
-        <p>Bike</p>
-        <p>$30,00</p>
-        <img src="./icons/icon_close.png" alt="close">
-      </div>
+    </div>
       <div class="order">
         <p>
           <span>Total</span>
         </p>
-        <p>$560.00</p>
+        <p id="total-price">$30.00</p>
       </div>
       <button class="primary-button">
         Checkout
       </button>
-    </div>
+    
   </div>
   </aside>
   <div class="cards-container" id="cards-container">
